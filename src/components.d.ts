@@ -49,7 +49,7 @@ declare module 'vue' {
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
-    Icon: typeof import('./components/icon.vue')['default']
+    sIcon: typeof import('./components/sicon.vue')['default']
     ProgressIndicator: typeof import('./components/ProgressIndicator.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

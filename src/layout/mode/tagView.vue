@@ -11,7 +11,7 @@
                     </el-tag>
                     <el-tag type="info" @click="handleCloseAll" v-if="getTagViews.length > 1"  class="cursor-pointer m-r-5px">
                         <div class="flex justify-center items-center">
-                            <icon :icon="'CircleClose'" class="m-r-3px"></icon>
+                            <sIcon :icon="'CircleClose'" class="m-r-3px"></sIcon>
                             关闭全部
                         </div>
                     </el-tag>

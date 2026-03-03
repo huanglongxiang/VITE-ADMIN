@@ -3,7 +3,7 @@
         <!-- 一级菜单组 -->
         <el-sub-menu v-if="item.children && item.children.length > 0" :index="item.index" >
             <template #title>
-                <icon :icon="item.icon || 'location'"></icon>
+                <sIcon :icon="item.icon || 'location'"></sIcon>
                 <span>{{ item.title }}</span>
             </template>
             <!-- 递归渲染菜单项 -->
@@ -11,7 +11,7 @@
         </el-sub-menu>
         <!-- 一级菜单项 -->
         <el-menu-item v-else :index="item.index" @click="handleLink(item)">
-            <icon :icon="item.icon || 'location'"></icon>
+            <sIcon :icon="item.icon || 'location'"></sIcon>
             <span>{{ item.title }}</span>
         </el-menu-item>
     </template>
