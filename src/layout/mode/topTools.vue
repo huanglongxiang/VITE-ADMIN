@@ -5,21 +5,20 @@
         </el-icon>
     </el-tooltip>
     <el-popover placement="bottom" :popper-style="{paddingBottom: '0px'}" trigger="click" :width="300">
-            <template #reference>
-                 <el-badge :value="12" class="cursor-pointer m-r-20px w-20px h-20px">
-                        <el-icon size="20">
-                            <Message />
-                        </el-icon>
-                    </el-badge>
-            </template>
-            <MessageContent></MessageContent>
-        </el-popover> 
+        <template #reference>
+            <el-badge :value="12" class="cursor-pointer m-r-20px w-20px h-20px">
+                <el-icon size="20">
+                    <Message />
+                </el-icon>
+            </el-badge>
+        </template>
+        <MessageContent></MessageContent>
+    </el-popover> 
     <el-tooltip effect="dark" content="全屏" placement="bottom">
         <el-icon size="20" class="cursor-pointer m-r-20px" @click="full">
             <FullScreen />
         </el-icon>
     </el-tooltip>
-        
     <el-tooltip effect="dark" content="布局设置" placement="bottom">
         <el-icon size="20" class="cursor-pointer m-r-20px" @click="setting">
             <Tools />
@@ -42,7 +41,6 @@ import MessageContent from './message.vue';
 import Drawer from './drawer.vue';
 
 const drawer = ref(false)
-
 
 const isFullscreen = ref(false);
 

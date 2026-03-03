@@ -56,10 +56,11 @@ onMounted(async () => {
 
 // 格式化菜单数据
 const formatMenuData = (data: any[]): any[] => {
+    
     return data.map((item: any, index: number) => ({
         index: item.path,
         title: item.title || item.name || '未命名菜单',
-        icon: item.icon || 'location',
+        icon: item?.meta?.icon || 'location',
         children: item.children ? formatMenuData(item.children) : undefined
     }))
 }

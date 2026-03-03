@@ -13,7 +13,7 @@
         <router-view v-slot="{ Component,route }">
           <transition name="view">
             <keep-alive v-if="route.meta.keepAlive"> 
-               <component :is="Component" />
+              <component :is="Component" />
             </keep-alive>
             <component v-else :is="Component" />
           </transition>
