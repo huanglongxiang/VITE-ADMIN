@@ -63,6 +63,7 @@ class DialogManager {
             beforeClose: null,                // 无关闭前回调
             width: undefined,                 // 默认无固定宽度
             height: undefined,                // 默认无固定高度
+            isFloote: true,
             // 默认底部按钮配置
             footerBtns: [
                 {
@@ -183,6 +184,7 @@ class DialogManager {
                         closeOnClickModal: dialogOptions.closeOnClickModal, // 点击遮罩关闭
                         closeOnPressEscape: dialogOptions.closeOnPressEscape, // ESC 键关闭
                         beforeClose: dialogOptions.beforeClose,  // 关闭前钩子
+
                         // 关闭事件处理器
                         onClose: () => {
                             this.dialogVisible = false;          // 设置不可见
@@ -194,19 +196,25 @@ class DialogManager {
                                 this.destroy();
                             }, 300);
                         },
-                    },
-                    {
+                    },{
                         // 默认插槽 - 对话框主体内容
                         default: renderContent,
                         // footer 插槽 - 对话框底部按钮区域
-                        footer: () =>
-                            h(
-                                "div",
-                                {
-                                    class: "dialog-footer",      // 底部容器样式类
-                                },
-                                footerNodes                       // 按钮数组
-                            ),
+                        footer: () =>{
+                            if (dialogOptions.isFloote === true) {
+                                return  h(
+                                    "div",
+                                    {
+                                        class: "dialog-footer",      // 底部容器样式类
+                                    },
+                                    footerNodes                       // 按钮数组
+                                )
+                            } else {
+                                return false
+                            }
+                            
+                        }
+                           
                     }
                 );
             },

@@ -5,6 +5,12 @@
 </template>
 <script setup lang="ts">
 import * as Icons from '@element-plus/icons-vue'
+
+
+defineOptions({
+    name: "sIcon"
+})
+
 const props = defineProps({
   icon: {
     type: String,

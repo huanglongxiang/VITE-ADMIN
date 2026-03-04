@@ -210,4 +210,10 @@ export interface DialogOptions {
      */
     handler?: (instance: any) => void;
   }>;
+  /** 
+   * 是否显示底部按钮区域（可选）
+   * 默认值：true
+   * 设置为 false 时不显示底部按钮区域
+   */
+  isFloote?: boolean;
 }

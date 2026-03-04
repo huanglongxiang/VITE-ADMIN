@@ -33,7 +33,6 @@ const props = defineProps({
 })
 
 const handleLink = (item: NavItemType) => {
-    console.log(item)
     systemStore.addTagView(item)
 }
 

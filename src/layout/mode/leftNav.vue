@@ -26,7 +26,6 @@ const navData = ref<NavItemType[]>([])
 // 处理菜单选择
 const handleSelect = (index: string) => {
     systemStore.setActiveIndex(index)
-    console.log('选中的菜单索引:', index)
 }
 
 // 改进的获取菜单数据方法
