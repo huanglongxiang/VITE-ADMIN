@@ -13,8 +13,10 @@ import '@/style.css'
 import "@/utils/qiankunMain";
 
 import './mock/index.ts'
-
+import ElementPlus from 'element-plus'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+
 
 const app = createApp(App);
 
@@ -26,6 +28,11 @@ app.use(pinia); // 注册 Pinia
 
 // 2. 获取系统store实例
 const systemStore = useSystemStore()
+
+// 国际化应用语言
+app.use(ElementPlus, {
+  locale: zhCn,
+})
 
 // 3. 在路由初始化前预加载动态路由
 systemStore.updateRouter()

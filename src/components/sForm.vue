@@ -66,6 +66,7 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
+import type { FormItem, FormProps } from '@/interface/componentsInterface'
 
 // Element Plus 表单组件导入
 import {
@@ -86,7 +87,6 @@ import {
     ElCascader,    // 级联选择器
     ElTransfer,    // 穿梭框
 } from 'element-plus'
-import type { FormItem, Props } from '@/interface/componentsInterface'
 
 /**
  * 组件类型映射表
@@ -124,7 +124,7 @@ const optionComponentMap: Record<string, Component> = {
 }
 
 // Props 定义，设置默认值
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<FormProps>(), {
     formItems: () => [],           // 表单项配置数组
     rules: () => ({}),             // 表单验证规则
     labelWidth: '100px',          // 标签宽度
