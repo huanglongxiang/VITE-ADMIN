@@ -25,8 +25,8 @@
 </template>
 
 <script setup lang="ts">
-import LeftNav from "./mode/leftNav.vue";
-import TopHeader from "./mode/topHeader.vue";
+import LeftNav from "./modules/leftNav.vue";
+import TopHeader from "./modules/topHeader.vue";
 // 布局组件无需复杂逻辑
 
 import { useSystemStore } from '../stores/modules/system'

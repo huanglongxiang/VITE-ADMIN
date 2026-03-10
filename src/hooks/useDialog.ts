@@ -49,7 +49,7 @@ class DialogManager {
      * @param {Object} [options.contentProps] - 传递给内容组件的属性
      * @returns {ComponentPublicInstance} - 返回对话框组件实例，包含 close 和 destroy 方法
      */
-    create(options = {}) {
+    create(options:DialogOptions = {}) {
         // 合并默认配置和用户传入的配置
         const defaultOptions: DialogOptions = {
             title: "提示",                    // 默认标题
@@ -295,7 +295,7 @@ const dialogManager = new DialogManager();
  *   footerBtns: [...]
  * });
  */
-export function createDialog(options: {} | undefined) {
+export function createDialog(options: DialogOptions | undefined) {
     return dialogManager.create(options);
 }
 
