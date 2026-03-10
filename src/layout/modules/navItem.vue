@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts" setup>
-import NavItem from '@/layout/mode/navItem.vue'  // 导入自身组件实现递归
+import NavItem from '@/layout/modules/navItem.vue'  // 导入自身组件实现递归
 import { useSystemStore } from '@/stores/modules/system'  // 导入系统状态管理 store
 import type { NavItemType } from '@/interface/layoutInterface'  // 导入导航项类型定义
 

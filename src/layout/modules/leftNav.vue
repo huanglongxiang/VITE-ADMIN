@@ -22,7 +22,7 @@ import { getUserList } from '@/api/user'
 import { storeToRefs } from 'pinia'
 
 // 导入导航菜单项子组件，用于递归渲染多级菜单
-import NavItem from '@/layout/mode/navItem.vue'
+import NavItem from '@/layout/modules/navItem.vue'
 
 // 导入导航项类型定义，确保数据结构符合规范
 import type { NavItemType } from '@/interface/layoutInterface'
