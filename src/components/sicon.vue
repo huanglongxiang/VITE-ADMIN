@@ -1,12 +1,26 @@
 <template>
-    <el-icon v-if="!src" :size="size" :color="color">
+    <!-- Element Plus 图标 -->
+    <el-icon v-if="!src && !svgName" :size="size" :color="color">
         <component :is="iconComponent" />
     </el-icon>
+    
+    <!-- 本地 SVG 文件 -->
+    <svg 
+        v-else-if="svgName" 
+        :style="{ width: `${computedSize}px`, height: `${computedSize}px` }"
+        :fill="color"
+        class="inline-block align-middle svg-icon"
+    >
+        <use :href="`#icon-${svgName}`" />
+    </svg>
+    
+    <!-- 外部图片 URL -->
     <img 
         v-else 
         :src="src" 
-        :style="{ width: `${size}px`, height: `${size}px` }"
+        :style="{ width: `${computedSize}px`, height: `${computedSize}px` }"
         :alt="alt"
+        class="inline-block align-middle img-icon"
     />
 </template>
 
@@ -19,33 +33,47 @@ defineOptions({
 })
 
 const props = defineProps({
+    // Element Plus 图标名称
     icon: {
         type: String,
         default: ''
     },
+    // 外部图片 URL
     src: {
         type: String,
         default: ''
     },
+    // 本地 SVG 图标名称（新增）
+    svgName: {
+        type: String,
+        default: ''
+    },
+    // 图标大小
     size: {
         type: [Number, String],
         default: 16
     },
+    // 图标颜色
     color: {
         type: String,
         default: 'inherit'
     },
+    // 图片替代文本
     alt: {
         type: String,
         default: 'icon'
     }
 })
 
-// 动态获取图标组件
+// 统一处理尺寸（支持字符串转数字）
+const computedSize = computed(() => {
+    return typeof props.size === 'string' ? Number(props.size) : props.size
+})
+
+// 动态获取 Element Plus 图标组件
 const iconComponent = computed(() => {
     if (!props.icon) return null
     
-    // 将首字母大写以匹配组件名
     const componentName = props.icon.charAt(0).toUpperCase() + props.icon.slice(1)
     const component = (Icons as any)[componentName]
     
@@ -57,3 +85,13 @@ const iconComponent = computed(() => {
     return component
 })
 </script>
+
+<style scoped lang="scss">
+.svg-icon {
+    vertical-align: middle;
+}
+
+.img-icon {
+    object-fit: contain;
+}
+</style>
