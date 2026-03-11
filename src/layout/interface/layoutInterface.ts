@@ -70,6 +70,8 @@ export interface RouteConfig {
     
     /** 页面图标（可选），显示在菜单项旁边 */
     icon?: string;
+    titles?: string[],
+    indexes?: string[]
   };
   
   /** 

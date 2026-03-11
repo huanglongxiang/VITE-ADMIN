@@ -1,0 +1,92 @@
+// ... existing code ...
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 导航栏动画 */
+.list {
+  &-move,
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.5s ease;
+  }
+  
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  
+  &-leave-active {
+    position: absolute;
+  }
+}
+
+/* 视图过渡动画 */
+.view {
+  &-move,
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.5s ease;
+  }
+  
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  
+  &-leave-active {
+    position: absolute;
+  }
+}
+
+/* 面包屑动画 */
+.breadcrumb {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+/* 核心：覆盖 el-dropdown 原生悬浮/聚焦边框 */
+.el-tooltip__trigger {
+  &:focus-visible {
+    outline: unset;
+  }
+}
+
+/* 表格过度动画 */
+.table-column {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.3s ease;
+  }
+  
+  &-enter-from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  
+  &-move {
+    transition: transform 0.3s ease;
+  }
+}

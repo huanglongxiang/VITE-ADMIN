@@ -9,7 +9,7 @@ import { useSystemStore } from './stores/modules/system' // 导入系统store
 import 'element-plus/dist/index.css'
 import '@unocss/reset/normalize.css'
 import 'virtual:uno.css'
-import '@/style.css'
+import '@/styles/style.scss'
 import "@/utils/qiankunMain";
 
 import './mock/index.ts'

@@ -5,7 +5,7 @@
  */
 import { defineStore } from 'pinia'
 import router from '@/router'
-import type { NavItemType } from '@/layout/interface/layoutInterface' // 菜单类型定义
+import type { NavItemType, RouteConfig } from '@/layout/interface/layoutInterface' // 菜单类型定义
 import { traverseRouter } from '@/utils/tools' // 路由扁平化工具函数
 import storage from '@/utils/storage'
 
@@ -131,7 +131,7 @@ export const useSystemStore = defineStore('system', {
             let component = isViewPage(item.index)
 
             // 4. 定义路由配置（符合 vue-router 规范）
-            const routeConfig = {
+            const routeConfig:RouteConfig = {
               path: item.index, // 路由路径（使用菜单的 index 字段）
               name: `Route_${item.title.replace(/\s+/g, '_')}`, // 路由名称（替换空格为下划线，避免冲突）
               meta: { // 路由元信息（用于面包屑、侧边栏渲染等）
