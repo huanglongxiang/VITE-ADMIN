@@ -25,11 +25,11 @@
 
 <script lang="ts" setup>
 import NavItem from '@/layout/modules/navItem.vue'  // 导入自身组件实现递归
-import { useSystemStore } from '@/stores/modules/system'  // 导入系统状态管理 store
 import type { NavItemType } from '@/layout/interface/layoutInterface'  // 导入导航项类型定义
+import { useTagViewStore } from '@/stores/modules/tagView'
 
 // 获取系统 store 实例
-const systemStore = useSystemStore()
+const tagViewStore = useTagViewStore()
 
 /**
  * Props 定义
@@ -51,6 +51,6 @@ const props = defineProps({
  * @param item - 被点击的导航项对象
  */
 const handleLink = (item: NavItemType) => {
-    systemStore.addTagView(item)
+    tagViewStore.addTagView(item)
 }
 </script>

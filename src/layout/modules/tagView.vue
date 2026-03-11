@@ -73,7 +73,9 @@
 
 <script lang="ts" setup>
 // 导入系统状态管理 store
+import { useTagViewStore } from '@/stores/modules/tagView'
 import { useSystemStore } from '@/stores/modules/system'
+
 
 // 导入 Pinia 的 storeToRefs 工具，用于提取响应式引用
 import { storeToRefs } from 'pinia'
@@ -103,13 +105,14 @@ const router = useRouter()
  * 获取系统 store 实例
  * 管理标签页、菜单等全局状态
  */
+const tagViewStore = useTagViewStore()
 const systemStore = useSystemStore()
 
 /**
  * 从 store 中提取标签页列表的响应式引用
  * getTagViews: 当前打开的所有标签页数组
  */
-const { getTagViews } = storeToRefs(systemStore)
+const { getTagViews } = storeToRefs(tagViewStore)
 
 /**
  * 控制右键菜单是否显示
@@ -150,7 +153,7 @@ const handleClose = (item: NavItemType) => {
     }
     
     // 从 store 中移除该标签页
-    systemStore.removeTagView(item)
+    tagViewStore.removeTagView(item)
     
     // 如果关闭的是当前激活的标签页，则跳转到下一个标签页
     if (systemStore.activeIndex === item.index) {
@@ -164,7 +167,7 @@ const handleClose = (item: NavItemType) => {
  */
 const handleCloseAll = () => {
     // 移除所有标签页
-    systemStore.removeTagViewsAll()
+    tagViewStore.removeTagViewsAll()
     
     // 从本地存储获取路由缓存
     const routes = storage.localStg.get("routes", [])
@@ -178,7 +181,7 @@ const handleCloseAll = () => {
             router.push('/home')
             
             // 添加第一个菜单项到标签页
-            systemStore.addTagView(firstRoute)
+            tagViewStore.addTagView(firstRoute)
             
             // 设置活动索引
             systemStore.setActiveIndex(firstRoute.index)

@@ -13,3 +13,5 @@ export default pinia
 
 // 导出所有模块 Store，实现按需导入
 export * from './modules/system'
+export * from './modules/user'
+export * from './modules/tagView'

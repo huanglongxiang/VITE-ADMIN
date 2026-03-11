@@ -28,12 +28,14 @@ import NavItem from '@/layout/modules/navItem.vue'
 import type { NavItemType } from '@/layout/interface/layoutInterface'
 import type { ResultData } from '@/api/interface/indexInterface'
 import { ResultCode } from '@/enum/httpEnum'
+import { useTagViewStore } from '@/stores/modules/tagView'
 
 /**
  * 获取系统 store 实例
  * 用于访问和修改全局状态（菜单折叠、活动索引、标签页等）
  */
 const systemStore = useSystemStore()
+const tagViewStore = useTagViewStore()
 
 /**
  * 从 store 中提取 getIsCollapse 的响应式引用
@@ -77,7 +79,7 @@ const loadMenuData = async () => {
             // 如果没有活动索引且存在菜单数据，则初始化第一个菜单项
             if (!systemStore.activeIndex && navData.value[0]) {
                 // 添加第一个菜单项到标签页视图
-                systemStore.addTagView(navData.value[0])
+                tagViewStore.addTagView(navData.value[0])
                 
                 // 设置活动索引为 '/home'
                 systemStore.setActiveIndex('/home')

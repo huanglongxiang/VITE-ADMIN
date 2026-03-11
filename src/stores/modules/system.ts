@@ -8,6 +8,7 @@ import router from '@/router'
 import type { NavItemType, RouteConfig } from '@/layout/interface/layoutInterface' // 菜单类型定义
 import { traverseRouter } from '@/utils/tools' // 路由扁平化工具函数
 import storage from '@/utils/storage'
+import { useTagViewStore } from './tagView'
 
 /**
  * 校验视图组件是否存在，并返回对应的导入函数
@@ -48,7 +49,6 @@ export const useSystemStore = defineStore('system', {
     isCollapse: false,
     // 菜单列表（类型为自定义的 NavItemType 数组）
     menuList: [] as NavItemType[],
-    tagViews: [] as NavItemType[],
     activeIndex: '',
   }),
 
@@ -58,8 +58,6 @@ export const useSystemStore = defineStore('system', {
     getIsCollapse: (state) => state.isCollapse,
     // 获取菜单列表
     getMenuList: (state) => state.menuList,
-    // 获取标签页列表
-    getTagViews: (state) => state.tagViews,
   },
 
   // 方法：修改状态的逻辑（支持异步）
@@ -67,23 +65,14 @@ export const useSystemStore = defineStore('system', {
     logOut() {
       // 登出逻辑
       this.menuList = []
-      this.tagViews = []
       this.activeIndex = ''
       this.isCollapse = false
+      // 调用 tagView 的清空方法
+      const tagViewStore = useTagViewStore()
+      tagViewStore.removeTagViewsAll()
     },
     setActiveIndex(index: string) {
       this.activeIndex = index
-    },
-    addTagView(tagView: NavItemType) {
-      if (!this.tagViews.find(v => v.index === tagView.index)) {
-        this.tagViews.push(tagView)
-      }
-    },
-    removeTagView(tagView: NavItemType) {
-      this.tagViews = this.tagViews.filter((item: NavItemType) => item.index !== tagView.index)
-    },
-    removeTagViewsAll() {
-      this.tagViews = []
     },
     /**
      * 设置侧边栏折叠状态

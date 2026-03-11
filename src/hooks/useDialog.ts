@@ -7,7 +7,7 @@
 import type { DialogOptions } from "@/layout/interface/layoutInterface";
 import { ElButton, ElDialog } from "element-plus";
 import { createApp, type ComponentPublicInstance } from "vue";
-
+import type { ButtonProps } from "element-plus";
 /**
  * @class DialogManager
  * @classdesc 对话框管理器类
@@ -124,8 +124,7 @@ class DialogManager {
                         {
                             key: index,                          // 列表渲染的唯一标识
                             // 按钮类型，使用类型断言确保符合 Element Plus 的类型要求
-                            type: btn.type as "" | "default" | "primary" | "text" | "success" | "warning" | "info" | "danger" || "primary",
-                            // 按钮点击事件处理
+                            type: (btn.type ?? "primary") as ButtonProps["type"],// 按钮点击事件处理
                             onClick: () => {
                                 if (btn.handler) {
                                     btn.handler(this); // 调用用户定义的处理器

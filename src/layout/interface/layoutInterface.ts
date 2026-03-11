@@ -3,6 +3,8 @@
  * @description 定义系统布局相关的 TypeScript 接口，包括导航菜单、路由配置和对话框选项
  */
 
+import type { ButtonProps } from "element-plus";
+
 /**
  * @interface NavItemType
  * @description 导航菜单项的数据结构定义
@@ -203,7 +205,7 @@ export interface DialogOptions {
      * 默认值："primary"
      * 对应 Element Plus Button 组件的 type 属性
      */
-    type?: string;
+    type?: ButtonProps["type"];
     
     /** 
      * 按钮点击事件处理函数（可选）
