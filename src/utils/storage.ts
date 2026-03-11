@@ -5,6 +5,7 @@
  */
 type StorageType = 'localStorage' | 'sessionStorage';
 type StorageData = string | number | boolean | object | null;
+import CryptoJS from 'crypto-js';
 
 interface StorageOptions {
   // 过期时间（单位：秒），默认永久
@@ -23,8 +24,13 @@ const DEFAULT_OPTIONS: Required<Omit<StorageOptions, 'expire'>> = {
 
 // 加密/解密工具（示例：简单base64，生产建议用更安全的加密方式如AES）
 const cryptoUtil = {
-  encrypt: (data: string): string => btoa(unescape(encodeURIComponent(data))),
-  decrypt: (data: string): string => decodeURIComponent(escape(atob(data))),
+  encrypt: (data: string): string => {
+    return CryptoJS.AES.encrypt(data, import.meta.env.ENCRYPTION_KEY).toString();
+  },
+  decrypt: (data: string): string => {
+    const bytes = CryptoJS.AES.decrypt(data, import.meta.env.ENCRYPTION_KEY);
+    return bytes.toString(CryptoJS.enc.Utf8);
+  },
 };
 
 class StorageUtil {
@@ -177,8 +183,10 @@ class StorageUtil {
 }
 
 // 导出常用实例（开箱即用）
-export const localStg = new StorageUtil('localStorage'); // localStorage 实例
-export const sessionStg = new StorageUtil('sessionStorage'); // sessionStorage 实例
+const localStg = new StorageUtil('localStorage'); // localStorage 实例
+const sessionStg = new StorageUtil('sessionStorage'); // sessionStorage 实例
 
-// 导出类（自定义配置时使用）
-export default StorageUtil;
+export default {
+  localStg,
+  sessionStg,
+};

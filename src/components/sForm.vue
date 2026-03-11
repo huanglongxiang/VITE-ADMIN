@@ -66,7 +66,7 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
-import type { FormItem, FormProps } from '@/interface/componentsInterface'
+import type { FormItem, FormProps } from '@/layout/interface/componentsInterface'
 
 // Element Plus 表单组件导入
 import {

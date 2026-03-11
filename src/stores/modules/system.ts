@@ -5,9 +5,9 @@
  */
 import { defineStore } from 'pinia'
 import router from '@/router'
-import type { NavItemType } from '@/interface/layoutInterface' // 菜单类型定义
+import type { NavItemType } from '@/layout/interface/layoutInterface' // 菜单类型定义
 import { traverseRouter } from '@/utils/tools' // 路由扁平化工具函数
-import { localStg } from '@/utils/storage'
+import storage from '@/utils/storage'
 
 /**
  * 校验视图组件是否存在，并返回对应的导入函数
@@ -155,7 +155,7 @@ export const useSystemStore = defineStore('system', {
             // throw error;
           }
         });
-        localStg.set('routes', routes)  // 缓存路由
+        storage.localStg.set('routes', routes)  // 缓存路由
       } catch (error) {
         // 全局错误捕获：路由更新整体失败
         console.error('💥 路由更新整体失败:', error);

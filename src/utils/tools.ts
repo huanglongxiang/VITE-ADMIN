@@ -1,5 +1,5 @@
-import type { NavItemType, RouteConfig } from '@/interface/layoutInterface'
-import { localStg } from './storage'
+import type { NavItemType, RouteConfig } from '@/layout/interface/layoutInterface'
+import storage from './storage'
 import { useSystemStore } from '@/stores'
 export function traverseRouter(routes: NavItemType[]): NavItemType[] { 
     let _list: NavItemType[] = []
@@ -25,7 +25,7 @@ export function traverseRouter(routes: NavItemType[]): NavItemType[] {
 
 export const toOneChildrenPage = (item: string, callback: (item: string | null) => void) => {
     // 修复1: 明确定义 routes 的类型，避免 null 值和 any 类型问题
-    const routes = localStg.get<RouteConfig[]>("routes", [])
+    const routes = storage.localStg.get<RouteConfig[]>("routes", [])
     
     // 修复2: 添加 null 检查和类型安全的遍历
     if (routes && Array.isArray(routes)) {

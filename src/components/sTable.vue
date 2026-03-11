@@ -51,7 +51,7 @@
 
 <script setup lang="ts">
 import { Minus, Plus } from '@element-plus/icons-vue';
-import type { ColumnProps, TableProps } from "@/interface/componentsInterface";
+import type { ColumnProps, TableProps } from "@/layout/interface/componentsInterface";
 import { VueDraggable } from 'vue-draggable-plus'
 
 const props = withDefaults(defineProps<TableProps>(), {

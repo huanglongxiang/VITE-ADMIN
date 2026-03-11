@@ -57,3 +57,23 @@ body {
 .el-tooltip__trigger:focus-visible {
     outline: unset;
 }
+
+/* 表格过度动画 */
+.table-column-enter-active,
+.table-column-leave-active {
+    transition: all 0.3s ease;
+}
+
+.table-column-enter-from {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.table-column-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.table-column-move {
+    transition: transform 0.3s ease;
+}

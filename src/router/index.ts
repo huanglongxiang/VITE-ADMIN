@@ -3,8 +3,8 @@ import Layout from '@/layout/index.vue'; // 引入主应用布局
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 import {toOneChildrenPage} from '@/utils/tools'
-import { localStg } from '@/utils/storage'
-import type { RouteConfig } from '@/interface/layoutInterface';
+import storage from '@/utils/storage'
+import type { RouteConfig } from '@/layout/interface/layoutInterface';
 
 
 
@@ -62,7 +62,7 @@ router.beforeEach(async (to, from, next) => {
   // 面包屑多层处理
   let _routesArr: string[] = []
   // 修复类型错误：明确指定返回类型为 RouteConfig[] 数组
-  const routesData = localStg.get<RouteConfig[]>("routes", [])
+  const routesData = storage.localStg.get<RouteConfig[]>("routes", [])
   
   // 添加类型检查确保是数组后再进行 map 操作
   if (Array.isArray(routesData) && routesData.length > 0) {

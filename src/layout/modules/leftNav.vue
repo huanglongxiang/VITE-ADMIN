@@ -16,7 +16,7 @@ import { ref, onMounted } from 'vue'
 import { useSystemStore } from '@/stores/modules/system'
 
 // 导入用户相关的 API 接口，用于获取用户菜单数据
-import { getUserList } from '@/api/user'
+import { getUserList } from '@/api/modules/user'
 
 // 导入 Pinia 的 storeToRefs 工具，用于从 store 中提取响应式的 refs
 import { storeToRefs } from 'pinia'
@@ -25,7 +25,9 @@ import { storeToRefs } from 'pinia'
 import NavItem from '@/layout/modules/navItem.vue'
 
 // 导入导航项类型定义，确保数据结构符合规范
-import type { NavItemType } from '@/interface/layoutInterface'
+import type { NavItemType } from '@/layout/interface/layoutInterface'
+import type { ResultData } from '@/api/interface/indexInterface'
+import { ResultCode } from '@/enum/httpEnum'
 
 /**
  * 获取系统 store 实例
@@ -63,12 +65,11 @@ const handleSelect = (index: string) => {
 const loadMenuData = async () => {
     try {
         // 调用 API 获取用户菜单数据
-        const res: any = await getUserList()
-        
+        const res:ResultData = await getUserList()
         // 检查响应是否成功
-        if (res && res.message === 'SUCCESS') {
+        if (res && res.code == ResultCode.SUCCESS.toString()) {
             // 格式化菜单数据并赋值给本地响应式变量
-            navData.value = formatMenuData(res.data)
+            navData.value = formatMenuData(res.data.data)
             
             // 将格式化后的菜单数据同步到 store 中
             systemStore.setMenuList(navData.value)

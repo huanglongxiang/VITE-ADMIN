@@ -4,7 +4,7 @@
  * 使用 Element Plus 的 ElDialog 组件，支持程序化创建和管理多个对话框实例
  */
 
-import type { DialogOptions } from "@/interface/layoutInterface";
+import type { DialogOptions } from "@/layout/interface/layoutInterface";
 import { ElButton, ElDialog } from "element-plus";
 import { createApp, type ComponentPublicInstance } from "vue";
 

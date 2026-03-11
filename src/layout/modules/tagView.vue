@@ -82,10 +82,10 @@ import { storeToRefs } from 'pinia'
 import { useRoute, useRouter } from 'vue-router'
 
 // 导入导航项类型定义
-import type { NavItemType } from '@/interface/layoutInterface'
+import type { NavItemType } from '@/layout/interface/layoutInterface'
 
 // 导入本地存储工具函数
-import { localStg } from '@/utils/storage'
+import storage from '@/utils/storage'
 
 /**
  * 获取当前路由实例
@@ -167,7 +167,7 @@ const handleCloseAll = () => {
     systemStore.removeTagViewsAll()
     
     // 从本地存储获取路由缓存
-    const routes = localStg.get("routes", [])
+    const routes = storage.localStg.get("routes", [])
     
     if (routes && routes.length > 0) {
         // 获取菜单列表的第一个菜单项
