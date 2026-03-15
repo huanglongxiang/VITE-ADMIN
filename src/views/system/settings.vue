@@ -1,10 +1,16 @@
 <template>
+    <div class="settings"></div>
     <s-table
         :columns="(tableConfig.columns as any)"
         :table-data="tableConfig.tableData"
         :current-page="tableConfig.pagination.currentPage"
         :page-size="tableConfig.pagination.pageSize"
         :total="tableConfig.pagination.total"
+        :isSelection="true"
+        :calculateMaxHeight="{
+            containerClass:'layout-main',
+            excludeClasses:[]
+        }"
         @refresh="handleRefresh"
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -27,7 +33,7 @@
         
         <!-- 自定义操作列 -->
         <template #action="{ row }">
-            <el-button type="primary" size="small" @click="handleEdit(row)">编辑</el-button>
+            <s-button type="primary" size="small" @click="handleEdit(row)">编辑</s-button>
             <el-button type="danger" size="small" @click="handleDelete(row)">删除</el-button>
         </template>
     </s-table>

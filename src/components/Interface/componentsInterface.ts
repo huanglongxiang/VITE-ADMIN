@@ -156,4 +156,18 @@ export interface TableProps {
     disabled?: boolean;
     /** 分页按钮是否有背景色，为 true 时页码按钮有底色 */
     background?: boolean;
+    isOptionaCal?:boolean;
+    isSelection?:boolean;
+    defaultSelections?:any[];
+    calculateMaxHeight?: calculateClass; // 自定义计算
+}
+
+type calculateClass ={
+  containerClass: string
+  excludeClasses: string[]
+}
+
+export interface ButtonProps {
+   disabled?: boolean
+    cooldown?: number
 }

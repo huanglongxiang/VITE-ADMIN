@@ -77,7 +77,7 @@ class DialogManager {
                     label: "确定",            // 确定按钮文本
                     type: "primary",          // 按钮类型为主要样式
                     handler: (instance: { close: () => void }) => {
-                        instance.close();     // 点击时关闭对话框
+                        // instance.close();     // 点击时关闭对话框
                     },
                 },
             ],

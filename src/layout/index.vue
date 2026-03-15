@@ -9,7 +9,7 @@
     </el-aside>
     <el-main class="p-0 transition-[margin-left] duration-300 ease-in-out" :class="marginLeft">
       <TopHeader></TopHeader>
-      <el-main class="p-0 h-[calc(100vh-92px)] bg-[rgb(244,244,245)] overflow-auto">
+      <el-main class="p-0 h-[calc(100vh-92px)] bg-[rgb(244,244,245)] overflow-auto layout-main">
         <router-view v-slot="{ Component,route }">
           <transition name="view">
             <keep-alive v-if="route.meta.keepAlive"> 

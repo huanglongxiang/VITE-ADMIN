@@ -24,7 +24,7 @@ const handleUserInfo = () => {
         title: '个人信息',
         width: '30%',
         content: userInfoForm,
-        isFloote: false,
+        isFloote: true,
         onClose: () => {
           console.log('对话框已关闭');
         },

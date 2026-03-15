@@ -15,7 +15,7 @@ const createUserList = () => {
     },
     {
       type: "layout",
-      path: "/system",
+      path: "/System",
       level: 1,
       title: "系统设置",
       meta: {
@@ -26,7 +26,7 @@ const createUserList = () => {
       children: [
         {
           type: "page",
-          path: "/system/settings",
+          path: "/System/Settings",
           level: 2,
           title: "用户管理",
           meta: {
@@ -37,7 +37,7 @@ const createUserList = () => {
         },
         {
           type: "page",
-          path: "/system/list",
+          path: "/System/list",
           level: 2,
           title: "菜单管理",
           meta: {
@@ -48,7 +48,7 @@ const createUserList = () => {
         },
         {
           type: "page",
-          path: "/system/role",
+          path: "/System/role",
           level: 2,
           title: "角色管理",
           meta: {

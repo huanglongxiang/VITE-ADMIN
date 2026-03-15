@@ -59,9 +59,14 @@ declare module 'vue' {
     ProgressIndicator: typeof import('./components/ProgressIndicator.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SButton: typeof import('./components/sButton.vue')['default']
+    SCard: typeof import('./components/sCard.vue')['default']
     SForm: typeof import('./components/sForm.vue')['default']
     sIcon: typeof import('./components/sIcon.vue')['default']
     SIcon: typeof import('./components/sIcon.vue')['default']
     STable: typeof import('./components/sTable.vue')['default']
+  }
+  export interface GlobalDirectives {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

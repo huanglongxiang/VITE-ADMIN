@@ -51,9 +51,10 @@
         <slot name="footer">
             <el-form-item v-if="showButtons">
                 <!-- 提交按钮 -->
-                <el-button type="primary" @click="handleSubmit" :loading="loading">
+                <s-button type="primary" @click="handleSubmit">
                     {{ submitText }}
-                </el-button>
+                </s-button>
+                    
                 <!-- 重置按钮 -->
                 <el-button v-if="showReset" @click="handleReset">重置</el-button>
                 <!-- 取消按钮 -->
@@ -66,7 +67,7 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
-import type { FormItem, FormProps } from '@/layout/interface/componentsInterface'
+import type { FormItem, FormProps } from '@/components/Interface/componentsInterface'
 
 // Element Plus 表单组件导入
 import {
@@ -232,16 +233,16 @@ const mergeProps = (item: FormItem): Record<string, any> => {
  * 先验证表单，验证通过后触发 submit 事件
  */
 const handleSubmit = async () => {
-    if (!formRef.value) return
+    // if (!formRef.value) return
 
-    try {
-        await formRef.value.validate()
-        emit('submit', props.formData)
-        emit('validate', true)
-    } catch (error) {
-        emit('validate', false)
-        console.error('表单验证失败:', error)
-    }
+    // try {
+    //     await formRef.value.validate()
+    //     emit('submit', props.formData)
+    //     emit('validate', true)
+    // } catch (error) {
+    //     emit('validate', false)
+    //     console.error('表单验证失败:', error)
+    // }
 }
 
 /**

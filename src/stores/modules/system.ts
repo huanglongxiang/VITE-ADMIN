@@ -115,10 +115,9 @@ export const useSystemStore = defineStore('system', {
             if (!item.index) {
               throw new Error(`菜单【${item.title}】缺少index路径配置`);
             }
-
+           
             // 3. 校验并获取组件导入函数（不存在则返回null）
             let component = isViewPage(item.index)
-
             // 4. 定义路由配置（符合 vue-router 规范）
             const routeConfig:RouteConfig = {
               path: item.index, // 路由路径（使用菜单的 index 字段）
