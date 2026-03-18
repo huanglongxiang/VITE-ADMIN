@@ -19,6 +19,7 @@
         >
             <!-- 根据类型动态渲染对应的表单组件 -->
             <component 
+                v-if="item.type"
                 :is="getComponent(item.type)" 
                 v-model="formData[item.prop]"
                 :placeholder="item.placeholder || `请输入${item.label}`" 
@@ -42,6 +43,7 @@
                 <!-- 自定义字段内容插槽 -->
                 <slot :name="item.prop" :item="item" :index="index"></slot>
             </component>
+            <slot v-else :name="item.prop"></slot>
         </el-form-item>
 
         <!-- 表单结束后自定义内容插槽 -->

@@ -2,10 +2,10 @@
     <!-- 表格容器 -->
     <div class="s-table" ref="sTableRefMain">
         <!-- 表头区域：包含操作按钮 -->
-        <header class="m-10px" v-if="isShowHeader">
-            <el-row class="justify-between">
+         <header class="m-10px" v-if="isShowHeader">
+            <el-row class="justify-between" :gutter="10">
                 <!-- 左侧按钮区 -->
-                <div>
+                <div class="flex-wrap gap-2 mb-2 md:mb-0">
                     <!-- 左插槽：可自定义按钮 -->
                     <slot name="LeftButton">
                         <el-button :icon="Plus" size="small" type="primary">添加</el-button>
@@ -14,7 +14,7 @@
                 </div>
                 
                 <!-- 右侧工具栏 -->
-                <div class="flex items-center">
+                <div class="flex items-center flex-wrap gap-2 justify-end">
                     <!-- 右插槽：可自定义工具按钮 -->
                     <slot name="RightButton">
                         <!-- 刷新按钮 -->
@@ -27,32 +27,35 @@
                             <template #reference>
                                 <s-icon class="m-r-10px cursor-pointer" icon="Setting"></s-icon>
                             </template>
-                            <div class="flex items-center justify-between">
-                                边框：<el-switch v-model="isBorder" />
-                            </div>
-                            <div class="flex items-center justify-between">
-                                斑马线：<el-switch v-model="isCrosswalk" />
-                            </div>
-                            <div class="flex items-center justify-between">
-                                多选：<el-switch v-model="isSelections" @change="handleSelectionSwitch" />
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center justify-between">
+                                    边框：<el-switch v-model="isBorder" />
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    斑马线：<el-switch v-model="isCrosswalk" />
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    多选：<el-switch v-model="isSelections" @change="handleSelectionSwitch" />
+                                </div>
                             </div>
                         </el-popover>
                         
                         <!-- 列显示设置：可拖拽排序和勾选 -->
-                        <el-popover placement="bottom" :width="50" trigger="click">
+                        <el-popover placement="bottom" :width="200" trigger="click">
                             <template #reference>
                                 <s-icon class="m-r-10px cursor-pointer" icon="Operation"></s-icon>
                             </template>
                             <el-checkbox-group v-model="checkList">
-                                <!-- 支持拖拽排序的列选择器 -->
                                 <VueDraggable :animation="300" v-model="columnsAll">
-                                    <el-checkbox 
-                                        :value="item.props.prop" 
-                                        :label="item.props.label"
-                                        v-for="item in columnsAll" 
-                                        size="large" 
-                                        :key="item.props.prop" 
-                                    />
+                                    <div class="flex flex-col gap-2 max-h-300px overflow-auto">
+                                        <el-checkbox 
+                                            :value="item.props.prop" 
+                                            :label="item.props.label"
+                                            v-for="item in columnsAll" 
+                                            size="large" 
+                                            :key="item.props.prop" 
+                                        />
+                                    </div>
                                 </VueDraggable>
                             </el-checkbox-group>
                         </el-popover>

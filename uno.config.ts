@@ -24,6 +24,14 @@ export default defineConfig({
       // 示例：
       // primary: '#42b983',
       // secondary: '#ff7e5f',
+    },
+    breakpoints:{
+      'xs': '320px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
     }
   },
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="37px" viewBox="0 0 50 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>v3logo备份</title>
+    <defs>
+        <linearGradient x1="50%" y1="0.636472902%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#0032D6" offset="0%"></stop>
+            <stop stop-color="#5995FB" offset="57.5092876%"></stop>
+            <stop stop-color="#2D5CF6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="V3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01登陆页" transform="translate(-150, -191)">
+            <g id="文案" transform="translate(142.93, 177)">
+                <g id="v3logo备份" transform="translate(7.0698, 14.1292)">
+                    <g id="编组备份">
+                        <path d="M21.0001267,18.3408205 C21.0001267,18.3408205 24.211185,18.3408205 30.6333017,18.3408205 L28.6365364,36.6816409 C23.5455966,24.4544273 21.0001267,18.3408205 21.0001267,18.3408205 Z" id="路径-2" fill="#55E2B1"></path>
+                        <polygon id="路径" fill="url(#linearGradient-1)" points="12.8864414 36.6816409 28.6365364 36.6816409 14.7955438 -6.02453471e-17 0 0"></polygon>
+                    </g>
+                    <polygon id="路径-3" fill="#2D5CF6" points="32.3837761 3.49348961 20.1304554 3.49348961 20.1304554 14.8473309"></polygon>
+                    <path d="M35.8847249,36.6816409 C43.1354272,36.6816409 49.0132827,31.7938641 49.0132827,25.7644859 C49.0132827,19.7351076 43.1354272,14.8473309 35.8847249,14.8473309 L35.8847249,36.6816409 Z" id="路径" fill="#2D5CF6"></path>
+                    <path d="M35.8847249,11.3538412 C35.8847249,11.3538412 39.0939279,8.73372403 45.512334,3.49348961 L35.8847249,3.49348961 C35.8847249,8.73372403 35.8847249,11.3538412 35.8847249,11.3538412 Z" id="路径-4" fill="#2D5CF6"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

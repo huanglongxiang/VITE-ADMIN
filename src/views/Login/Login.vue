@@ -1,52 +1,31 @@
 <template>
-    <div class="bg-[rgb(244,244,245)] w-100vw h-100vh flex items-center justify-center">
-        <el-card class="w-[500px] flex items-center justify-center">
-            <div class="w-[300px]">
-                <h3 class="text-center">AdminSystem</h3>
-                <el-form ref="form" :model="formData"> 
-                    <el-form-item>
-                        <el-input :prefix-icon="User" placeholder="用户名" v-model="formData.username"></el-input>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-input :prefix-icon="Lock" placeholder="密码" :type="password" v-model="formData.password">
-                            <template #append>
-                                <el-button link @click="isShowPsw" :icon="type === 'hide' ? View  : Hide" ></el-button>
-                            </template>
-                        </el-input>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-button class="w-100%" type="primary" @click="onSubmit">登录</el-button>
-                    </el-form-item>
-                </el-form>
-            </div>
-        </el-card>
+    <div class="loginPage w-100vw h-100vh flex items-center justify-center">
+        <el-container class="h-100vh">
+            <el-aside class="w-70vw">
+                <Banner></Banner>
+            </el-aside>
+            <el-main class="w-30vw bg-[#fff] flex justify-center p-t-[20vh]">
+                <input-login></input-login>
+            </el-main>
+        </el-container>
     </div>
 </template>
 <script setup lang="ts">
-import router from '@/router'
-import { Lock, User,View,Hide } from '@element-plus/icons-vue'
+import Banner from './bg/bg.vue';
+import InputLogin from './inputLogin/inputLogin.vue'
 
-
-
-
-const formData = reactive({
-    username: '',
-    password: ''
-})
-
-const type = ref('hide')
-const password = ref('password')
-// 密码可见
-const isShowPsw = () => {
-    type.value = type.value === 'hide' ? 'view' : 'hide'
-    if (type.value === 'view') {
-        password.value = 'text'
-    } else {
-        password.value = 'password'
+</script>
+<style lang="scss" scoped>
+@use '@/styles/images-variables.scss' as *;
+.loginPage{
+    background-image: $sbg;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;  // 确保最小高度为视口高度
+     // 移动端优化
+    @media (max-width: 768px) {
+        background-position: center 20%;  // 移动端调整聚焦位置
     }
 }
-
-const onSubmit = () => {
-   router.push('/home')
-}
-</script>
+</style>
