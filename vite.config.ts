@@ -6,6 +6,8 @@ import UnoCSS from 'unocss/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Inspect from 'vite-plugin-inspect'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+
 
 import { viteMockServe } from 'vite-plugin-mock'
 
@@ -26,7 +28,10 @@ export default defineConfig({
   plugins: [
     vue(),
     UnoCSS(),
-    
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/images')],
+      symbolId: 'icon-[dir]-[name]',
+    }),
     viteMockServe({
       // 开发环境启用 Mock
       enable: true,

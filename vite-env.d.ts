@@ -15,6 +15,11 @@ declare module 'virtual:uno.css' {
   export default content;
 }
 
+declare module 'virtual:svg-icons-register' {
+  const content: string;
+  export default content;
+}
+
 
 interface Window {
   $progress: {

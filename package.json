@@ -25,6 +25,7 @@
     "save": "^2.9.0",
     "screenfull": "^6.0.2",
     "vite-plugin-inspect": "^11.3.3",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vue": "^3.5.25",
     "vue-draggable-plus": "^0.6.1",
     "vue-fullscreen": "^2.6.1",

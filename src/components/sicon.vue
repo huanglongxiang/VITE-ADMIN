@@ -8,10 +8,12 @@
     <svg 
         v-else-if="svgName" 
         :style="{ width: `${computedSize}px`, height: `${computedSize}px` }"
+        :width="computedSize"
+        :height="computedSize"
         :fill="color"
         class="inline-block align-middle svg-icon"
     >
-        <use :href="`#icon-${svgName}`" />
+        <use :xlink:href="`#icon-${svgName}`" />
     </svg>
     
     <!-- 外部图片 URL -->

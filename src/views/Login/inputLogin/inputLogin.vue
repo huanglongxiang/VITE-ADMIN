@@ -14,7 +14,11 @@
         <s-form label-position="top" :formData="formData" :formItems="formItems" :rules="rules" :showButtons="false">
             <template #captcha>
                 <div class="flex w-100%">
-                    <el-input v-model="formData.captcha" placeholder="请输入验证码" />
+                    <el-input v-model="formData.captcha" placeholder="请输入验证码" >
+                        <template #prefix>
+                            <s-icon svg-name="验证码1" :size="16"></s-icon>
+                        </template>
+                    </el-input>
                     <div class="w-150px h-40px bg-blue"></div>
                 </div>
             </template>
@@ -29,7 +33,7 @@
         </el-row>
         <el-row>
             <el-col>
-                <el-button type="primary" class="w-100% bg-#2D5CF6" @click="onSubmit">登录</el-button>
+                <el-button type="primary" class="w-100% bg-#2D5CF6 h-40px" @click="onSubmit">登录</el-button>
             </el-col>
 
         </el-row>
@@ -53,8 +57,8 @@ const formItems = [
         label: '用户名',
         placeholder: '请输入用户名',
         props: {
-            style: { height: '40px' }
-
+            style: { height: '40px' },
+            prefixIcon: 'User'
         }
     },
     {
@@ -66,6 +70,7 @@ const formItems = [
             type: 'password',
             showPassword: true,
             disabled: false,
+            prefixIcon: 'Lock',
             style: { height: '40px' }
         },
     },
