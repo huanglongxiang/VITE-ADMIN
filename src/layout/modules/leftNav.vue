@@ -1,5 +1,7 @@
 <template>
-    <el-menu :class="getIsCollapse ? '' : 'max-h-[calc(100vh-50px)] overflow-auto'"
+    <el-menu  :class="getIsCollapse ? '' : 'max-h-[calc(100vh-50px)] overflow-auto'"
+        background-color="transparent"
+        active-text-color="#2D5CF6"
         class="border-r-none el-menu-vertical transition-width duration-300 ease-in-out" 
         :collapse="getIsCollapse" :default-active="systemStore.activeIndex" :router="true"
         @select="handleSelect">
@@ -126,3 +128,24 @@ const formatMenuData = (data: any[]): any[] => {
     }))
 }
 </script>
+<style scoped lang="scss"> 
+.el-menu-vertical{
+    height: calc(100vh - 90px);
+    :deep(.el-menu-item),
+    :deep(.el-sub-menu__title){
+        height: 40px;
+        margin-bottom: 5px;
+        &.el-tooltip__trigger{
+            justify-content: center;
+        }
+        &:hover,
+        &.is-active {
+            background-color: #fff;
+        }
+    }
+    
+    :deep(.el-sub-menu__title){
+        padding: 0;
+    }
+}
+</style>

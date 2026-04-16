@@ -22,6 +22,10 @@ export default defineConfig({
       '@': pathSrc,
     },
   },
+  server: {
+    host: true,
+    open: false,
+  },
   optimizeDeps: {
     include: ['@/views/*.vue']
   },

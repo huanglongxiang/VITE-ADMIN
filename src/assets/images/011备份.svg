@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>011备份</title>
+    <defs>
+        <pattern id="pattern-1" width="100%" height="100%" patternUnits="objectBoundingBox">
+            <use xlink:href="#image-2"></use>
+        </pattern>
+        <image id="image-2" width="30" height="30" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAHqADAAQAAAABAAAAHgAAAADKQTcFAAADJElEQVRIDY1WUXYTQQzLpuGHDw7HvTgXN+AoPB6lCZIseT3JJq/zumNb1lj2bNJ2+/7j7+2EtW8VVHxb8JtAcGnxFMcxIef33Hq+cXDPpw07loz9YLQLXtTX+2hIxPtmCAI7z8LRZW6bCQJck1DIvkegEUw7sHbh0D+TNzVKsE4Hj15sZdc9hWVdPIxuYOCHV93iUWaFV6qtMBx3ciSqqxaVRfEsOhZSE9gcNn1IxNUV8n4jFsuE+uDmhs4s3EXjG8jkS55BHheSgAvatPgial3y9Y5ZKCLyOYPVhEtonZqUuSTIivxRgGyFPeVsUBOnQE/PRghaXK7EwzywU5DpIco+uhn7F3IyrZIWJXno+iCTqciTXiRTiTvTdCt8EBQJ26WrgzgbaB+k2YAOAsgEEZpW01qY/HB11vili7KYMrsQD6QBp2C2041TZ8G9gXgvzHQLmj5OjYlBVBPMugmJOlZX9K9sBh80iF8RtyjwiIOFQHtMx4Xiqrt4kIgmjgWu16vuUMdCV9jrR4lSxXrDWdyqBpI+XPcv0bWL5EC3C5+FN/+i/fP7evp4B/ZEMD0f2cuvn/+O8EcsDSDDW3r7cjp9/bbJMnZ6OI8lJvL5iXmKAnjObxDGyQ/3zFivjPncdXeiY1NTQL3jCd8fcKypWBjXrAe+rpjvmD0RJ9d8loyrXhIwAWD/HhPAUj4k2MQtTIwgH75bVuUjdePkMEcOl+MKal++x50g0UFEHoSdb+E+nIOwEE8d9qZlYJ14CKpLMomRfP+oCjZW7KrlkkpI1gFNAXTG10kJInCaxJCBMblKkrgvTW1cV4wUw/Qj34Bo2D7/95gndKoM3WVYBxFTM+CQJMwJGub673Gm6uIRsaAmZ6EXK+87orGLuBvQ/1yuvU80RYdQrl3NkaP2y7aI+YljIy5dTiyNVoa2RTO5biLYaOKZKyFPVXdcVyu+G6Xp/zKZmKJpKJrJJVYhb61jRwZbLGk9uYK8YwQprAmZzDpSSu6ZdQNMPxPXVbcoiK0Dp/0IPABJRGGPF8Edrl+ziJ9etbgWmo2NGoduX2mmtm2cp4D9B7kPUOL2DKv0AAAAAElFTkSuQmCC"></image>
+    </defs>
+    <g id="V3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03首页-03" transform="translate(-352, -36)">
+            <g id="首页" transform="translate(340, 24)">
+                <g id="011备份" transform="translate(12, 12)">
+                    <path d="M0.787913569,9.7996849 L13.1130083,0.40913656 C13.461348,0.143734823 13.8871693,-1.02977743e-15 14.3250947,0 L16.8200644,0 C17.2914804,1.63898373e-15 17.7477445,0.166521711 18.1083359,0.470177604 L29.1882715,9.80064968 C29.639534,10.1806602 29.9,10.740518 29.9,11.3304721 L29.9,13.7287894 L29.9,13.7287894 L29.3554941,24.0084001 C29.2870069,25.3013546 28.8021111,26.5374667 27.9732214,27.5321343 L26.5996927,29.1803688 C26.219705,29.636354 25.6568098,29.9 25.0632501,29.9 L6.02842712,29.9 C5.49799415,29.9 4.98928632,29.6892863 4.61421356,29.3142136 L2.80042719,27.5004272 C1.82960385,26.5296038 1.22109608,25.2551949 1.07645633,23.8898835 L0,13.7287894 L0,13.7287894 L0,11.3905483 C-7.64406315e-17,10.7663632 0.291416922,10.1779681 0.787913569,9.7996849 Z" id="路径-11" fill="url(#pattern-1)"></path>
+                    <line x1="14.95" y1="18.85" x2="14.95" y2="26" id="路径-12" stroke="#FFFFFF" stroke-width="2"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,33 +1,27 @@
 <template>
-    <el-tooltip effect="dark" content="文档" placement="bottom">
-        <el-icon size="20" class="cursor-pointer m-r-20px">
-            <Warning />
-        </el-icon>
+    <el-tooltip effect="dark" content="搜索" placement="bottom">
+        <s-icon :size="18" svg-name="search" class="m-r-20px cursor-pointer"></s-icon>
     </el-tooltip>
     <el-popover placement="bottom" :popper-style="{paddingBottom: '0px'}" trigger="click" :width="300">
         <template #reference>
             <el-badge :value="12" class="cursor-pointer m-r-20px w-20px h-20px">
-                <el-icon size="20">
-                    <Message />
-                </el-icon>
+                <s-icon :size="18" icon="Bell" class="m-r-20px"></s-icon>
             </el-badge>
         </template>
         <MessageContent></MessageContent>
     </el-popover> 
+    <div class="w-1px h-18px bg-#CCCCCC m-r-20px"></div>
     <el-tooltip effect="dark" content="全屏" placement="bottom">
-        <el-icon size="20" class="cursor-pointer m-r-20px" @click="full">
-            <FullScreen />
-        </el-icon>
+        <s-icon :size="18" icon="FullScreen" class="m-r-20px cursor-pointer" @click="full"></s-icon>
     </el-tooltip>
     <el-tooltip effect="dark" content="布局设置" placement="bottom">
-        <el-icon size="20" class="cursor-pointer m-r-20px" @click="setting">
-            <Tools />
-        </el-icon>
+        <s-icon :size="18" icon="Setting" class="m-r-20px cursor-pointer" @click="setting"></s-icon>
+    </el-tooltip>
+     <el-tooltip effect="dark" content="主题" placement="bottom">
+        <s-icon :size="18" svg-name="theme" class="m-r-20px cursor-pointer"></s-icon>
     </el-tooltip>
     <el-tooltip effect="dark" content="锁屏" placement="bottom">
-        <el-icon size="20" class="cursor-pointer m-r-20px">
-            <Lock />
-        </el-icon>
+        <s-icon :size="18" icon="Lock" class="m-r-20px cursor-pointer"></s-icon>
     </el-tooltip>
     <!-- 设置选项抽屉 -->
     <el-drawer v-model="drawer" :with-header="false" size="20%" append-to="#app">
@@ -35,7 +29,6 @@
     </el-drawer>
 </template>
 <script setup lang="ts">
-import { Warning, Lock, FullScreen, Message, Tools } from '@element-plus/icons-vue'
 import screenfull from 'screenfull';
 import MessageContent from './message.vue';
 import Drawer from './drawer.vue';

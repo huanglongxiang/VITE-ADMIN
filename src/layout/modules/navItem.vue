@@ -2,7 +2,7 @@
     <!-- 遍历导航数据，递归渲染菜单 -->
     <template v-for="item in navData">
         <!-- 一级菜单组：有子菜单时渲染为子菜单容器 -->
-        <el-sub-menu v-if="item.children && item.children.length > 0" :index="item.index">
+        <el-sub-menu  v-if="item.children && item.children.length > 0" :index="item.index">
             <!-- 子菜单标题：显示图标和标题文本 -->
             <template #title>
                 <sIcon :icon="item.icon || 'location'"></sIcon>
@@ -15,10 +15,11 @@
         
         <!-- 一级菜单项：无子菜单时渲染为普通菜单项 -->
         <el-menu-item v-else :index="item.index" @click="handleLink(item)">
-            <!-- 菜单项图标：默认使用 'location' 图标 -->
-            <sIcon :icon="item.icon || 'location'"></sIcon>
-            <!-- 菜单项标题 -->
-            <span>{{ item.title }}</span>
+           
+                <!-- 菜单项图标：默认使用 'location' 图标 -->
+                <sIcon :icon="item.icon || 'location'"></sIcon>
+                <!-- 菜单项标题 -->
+                <span>{{ item.title }}</span>
         </el-menu-item>
     </template>
 </template>

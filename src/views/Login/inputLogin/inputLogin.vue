@@ -39,9 +39,11 @@
         </el-row>
     </div>
 </template>
-<script lang="ts" setup>
+<script setup lang="ts">
+import type { RuleForm } from '@/api/interface/userInterface'
 import router from '@/router'
 import type { FormRules } from 'element-plus'
+
 const formData = reactive({
     username: '',
     password: '',
@@ -82,11 +84,7 @@ const formItems = [
 
     }
 ]
-interface RuleForm {
-    username: string
-    password: string
-    captcha: string
-}
+
 
 const rules = reactive<FormRules<RuleForm>>({
     username: [
@@ -102,19 +100,13 @@ const rules = reactive<FormRules<RuleForm>>({
 
 
 
-const type = ref('hide')
-const password = ref('password')
-// 密码可见
-const isShowPsw = () => {
-    type.value = type.value === 'hide' ? 'view' : 'hide'
-    if (type.value === 'view') {
-        password.value = 'text'
-    } else {
-        password.value = 'password'
-    }
-}
 
 const onSubmit = () => {
+    if(!formData.username || !formData.password || !formData.captcha) {
+        ElMessage.error('请登录信息信息')
+        return
+    }
+    
     router.push('/home')
 }
 </script>

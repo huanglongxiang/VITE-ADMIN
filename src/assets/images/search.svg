@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>搜索</title>
+    <g id="V3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="03首页-03" transform="translate(-1325, -33)" stroke="#474C57" stroke-width="2.5">
+            <g id="top" transform="translate(1, 0)">
+                <g id="小图标上" transform="translate(1326, 23)">
+                    <g id="搜索" transform="translate(0, 12)">
+                        <path d="M13.525376,27.050752 C20.9952025,27.050752 27.050752,20.9952025 27.050752,13.525376 C27.050752,6.05554951 20.9952025,0 13.525376,0 C6.05554951,0 0,6.05554951 0,13.525376 C0,20.9952025 6.05554951,27.050752 13.525376,27.050752 Z" id="路径"></path>
+                        <line x1="23.2490075" y1="23.249087" x2="30" y2="30.0000796" id="路径" stroke-linecap="round"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

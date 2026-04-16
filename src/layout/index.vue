@@ -2,7 +2,7 @@
   <el-container class="w-screen h-screen">
     <!-- 侧边栏：响应式控制 -->
     <el-aside 
-      class="h-screen absolute transition-width duration-300 ease-in-out w-auto z-100"
+      class="h-screen absolute transition-width duration-300 ease-in-out w-auto z-100 bg-left-nav "
       :class="[
         getIsCollapse ? 'max-w-64px' : 'max-w-200px',
         isMobile ? 'transform transition-transform duration-300' : '',
@@ -12,12 +12,18 @@
       <TransitionGroup name="list">
         <el-header 
           key="header" 
-          class="w-200px h-50px p-0 flex items-center justify-center bg-[rgb(121,187,255)] c-#fff"
+          class="w-200px h-50px p-l[20px] flex items-center cursor-pointer"
           v-show="!getIsCollapse && !isMobile"
         >
-          AdminSystem
+          <s-icon svgName="v3logo" class="text-xl m-r-10px" size="25"></s-icon>
+          <span>Admin Vite</span> 
         </el-header>
         <LeftNav key="leftNav"></LeftNav>
+        <div class="h-40px absolute bottom-0px flex items-center w-100% border-t-[1px] border-t border-t-solid border-t-#D6E1F1">
+          <div class="m-l-20px cursor-pointer">
+            <s-icon :svg-name="FoldAndExpand" icon="Menu" :size="20" @click="handleChangeCollapse"></s-icon>
+          </div>
+        </div>
       </TransitionGroup>
     </el-aside>
 
@@ -44,9 +50,9 @@
         <router-view v-slot="{ Component,route }">
           <transition name="view">
             <keep-alive v-if="route.meta.keepAlive"> 
-              <component :is="Component" />
+              <component :is="Component"  />
             </keep-alive>
-            <component v-else :is="Component" />
+            <component v-else  :is="Component" />
           </transition>
         </router-view>
         <el-backtop :right="100" :bottom="100"></el-backtop>
@@ -78,6 +84,15 @@ const showMobileSidebar = ref(false)
 
 let navWidth = ref('max-w-200px')
 let marginLeft = ref('m-l-64px')
+
+const FoldAndExpand = computed(() => {
+  if (!isCollapse.value) {
+    return 'to-left'
+  } else {
+    return 'to-Right'
+  }
+
+})
 
 /**
  * 检测屏幕尺寸
@@ -134,9 +149,15 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', checkMobile)
 })
+
+const { isCollapse } = storeToRefs(systemStore)
+const handleChangeCollapse = () => {
+    systemStore.setCollapse(!isCollapse.value)
+} 
 </script>
 
 <style scoped lang="scss">
+@use '@/styles/images-variables.scss' as *;
 .layout-main {
   &::-webkit-scrollbar {
     width: 6px;
@@ -151,5 +172,14 @@ onUnmounted(() => {
       background-color: rgba(0, 0, 0, 0.3);
     }
   }
+ 
+}
+.bg-left-nav{
+  background: $snavLeft;
+  background-size: 126%;
+  background-position-x: calc(100% + 6px);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  box-shadow: 0px 3px 6px 0px rgba(221,221,221,0.5);
 }
 </style>

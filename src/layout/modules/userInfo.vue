@@ -1,6 +1,10 @@
 <template>
-    <el-dropdown placement="bottom" class="m-r-10px">
-        <el-avatar :size="25" :src="circleUrl" />
+    <el-dropdown placement="bottom" class="m-r-10px" @visible-change="handleChange">
+        <div class="userBox flex items-center cursor-pointer">
+            <s-icon :size="25" svg-name="user" class="m-r-10px"></s-icon>
+            <span class="m-r-10px"> 管理员</span>
+            <s-icon :icon="isOpenDropdown ? 'ArrowUp':'ArrowDown'" :size="18"></s-icon>
+        </div>
         <template #dropdown>
             <el-dropdown-menu>
                 <el-dropdown-item @click="handleUserInfo">个人中心</el-dropdown-item>
@@ -19,6 +23,12 @@ const loginOut = () => {
     router.push('/login')
     useSystemStore().logOut()
 }
+const isOpenDropdown = ref(false)
+
+const handleChange = (val: boolean) => {
+    isOpenDropdown.value = val
+}
+
 const handleUserInfo = () => {
     createDialog({
         title: '个人信息',
@@ -31,10 +41,5 @@ const handleUserInfo = () => {
     })
 }
 
-const state = reactive({
-  circleUrl:
-    'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
-})
 
-const { circleUrl } = toRefs(state)
 </script>

@@ -5,3 +5,8 @@ export interface ApiResponse {
     data: any[]
   }
 }
+export interface RuleForm {
+    username: string
+    password: string
+    captcha: string
+}
